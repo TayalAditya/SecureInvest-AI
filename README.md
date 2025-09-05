@@ -128,17 +128,6 @@ The current prototype includes:
 - Social media monitoring (limited scope)
 - Integration with sample regulatory databases
 
-## Demo & Testing
-- **Live Demo**: [https://secureinvest-ai-demo.herokuapp.com](https://secureinvest-ai-demo.herokuapp.com)
-- **GitHub Repository**: [https://github.com/adityatayal/SecureInvest-Ai](https://github.com/adityatayal/SecureInvest-Ai)
-- **Video Demo**: Available in the demo link
-
-## Contributing
-We welcome contributions! Please read our contributing guidelines and submit pull requests.
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Contact
 For questions or support, please contact:
 - Email: adityatayal404@gmail.com
