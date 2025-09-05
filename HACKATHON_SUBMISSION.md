@@ -105,20 +105,6 @@ SecureInvest AI is a multi-modal fraud detection platform that combines advanced
 - Real-time fraud alerts
 - Comprehensive reporting system
 
-## 🔗 Demo Link / GitHub / Video
-
-### Live Demo:
-**URL**: https://secureinvest-ai-demo.herokuapp.com
-*Note: Demo showcases core functionality with sample data*
-
-### GitHub Repository:
-**URL**: https://github.com/adityatayal/SecureInvest-Ai
-*Complete source code, documentation, and setup instructions*
-
-### Video Demonstration:
-**URL**: Available in the demo link above
-*Comprehensive walkthrough of all features and capabilities*
-
 ### Local Demo:
 Run `start-demo.bat` or open `demo.html` for offline demonstration
 
@@ -190,9 +176,8 @@ Run `start-demo.bat` or open `demo.html` for offline demonstration
 
 For technical queries, demo requests, or collaboration opportunities:
 - **Email**: adityatayal404@gmail.com
-- **Project Repository**: https://github.com/adityatayal/SecureInvest-Ai
-- **Demo Site**: https://secureinvest-ai-demo.herokuapp.com
-
+- **Project Repository**: [https://github.com/adityatayal/SecureInvest-Ai
+](https://github.com/TayalAditya/SecureInvest-AI)
 ---
 
 *This submission represents a comprehensive solution to securities market fraud prevention, aligned with SEBI's vision of protecting retail investors and maintaining market integrity through innovative technology.*
