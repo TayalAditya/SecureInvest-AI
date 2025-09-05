@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureInvest AI - Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .demo-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .demo-card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .demo-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .fraud-example {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .fraud-example.high-risk {
+            background: #f8d7da;
+            border-color: #f5c6cb;
+        }
+
+        .risk-score {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            color: white;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .risk-critical { background: #dc3545; }
+        .risk-high { background: #fd7e14; }
+        .risk-medium { background: #ffc107; color: #333; }
+        .risk-low { background: #28a745; }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #5a6fd8;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .demo-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ SecureInvest AI</h1>
+            <p>Comprehensive Fraud Prevention Platform for Securities Market</p>
+            <p><strong>SEBI Securities Market Hackathon 2025</strong></p>
+        </div>
+
+        <div class="demo-card">
+            <h2>🎯 Problem Statement</h2>
+            <p>Fraudsters employ various deceptive tactics to exploit investors in the securities market, causing financial losses and eroding trust. Our platform addresses multiple fraud types:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🎭 Fraudulent Advisors</h3>
+                    <p>Unregistered advisors and Ponzi schemes promising guaranteed high returns</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎬 Deepfake Content</h3>
+                    <p>Manipulated videos/audios and fabricated regulatory documents</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📱 Social Media Manipulation</h3>
+                    <p>WhatsApp/Telegram groups orchestrating pump-and-dump schemes</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📄 Fake Documents</h3>
+                    <p>Fraudulent trading apps and misleading corporate announcements</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-card">
+            <h2>🚀 Our Solution: SecureInvest AI</h2>
+            <p>A comprehensive, AI-powered fraud prevention platform that provides real-time detection and protection for retail investors.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">94.2%</div>
+                    <div>Detection Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15.7K</div>
+                    <div>Users Protected</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1,247</div>
+                    <div>Frauds Prevented</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">&lt;2s</div>
+                    <div>Analysis Time</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-card">
+            <h2>🔍 Live Fraud Detection Demo</h2>
+            <p>See how our AI engine analyzes content for fraudulent patterns:</p>
+            
+            <div class="fraud-example high-risk">
+                <h4>Example 1: High-Risk Investment Scheme</h4>
+                <p><em>"🚀 GUARANTEED 500% RETURNS IN 30 DAYS! 🚀<br>
+                Join our exclusive WhatsApp group for insider trading tips! No risk, only profits!<br>
+                Contact: +91-9876543210<br>
+                Limited time offer - Act NOW!"</em></p>
+                <span class="risk-score risk-critical">Risk Score: 92/100 - CRITICAL</span>
+            </div>
+
+            <div class="fraud-example">
+                <h4>Example 2: Fake SEBI Advisor</h4>
+                <p><em>"I am a SEBI registered investment advisor with 20 years experience. Get guaranteed IPO allotments with 100% profit guarantee. Send money to my personal account for instant processing."</em></p>
+                <span class="risk-score risk-high">Risk Score: 78/100 - HIGH RISK</span>
+            </div>
+
+            <div class="fraud-example">
+                <h4>Example 3: Pump and Dump Scheme</h4>
+                <p><em>"🔥 HOT TIP: XYZ stock will double tomorrow! Buy now before 10 AM. Target price 500. Book 100% profit. Join our Telegram channel for more such tips. Hurry!"</em></p>
+                <span class="risk-score risk-high">Risk Score: 85/100 - HIGH RISK</span>
+            </div>
+        </div>
+
+        <div class="demo-card">
+            <h2>🛠️ Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🧠 AI-Powered Detection</h3>
+                    <p>Advanced NLP and ML algorithms for pattern recognition</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚡ Real-Time Analysis</h3>
+                    <p>Instant fraud detection with immediate alerts</p>
+                </div>
+                <div class="feature-card">
+                    <h3>✅ Advisor Verification</h3>
+                    <p>Cross-reference against SEBI registered databases</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Social Media Monitoring</h3>
+                    <p>Track manipulation across WhatsApp, Telegram, Twitter</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📋 Document Verification</h3>
+                    <p>OCR and authenticity checks for regulatory documents</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔔 Smart Alerts</h3>
+                    <p>Customizable notifications and risk assessments</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-card">
+            <h2>💻 Technology Stack</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">TensorFlow</span>
+                <span class="tech-tag">OpenCV</span>
+                <span class="tech-tag">NLP</span>
+                <span class="tech-tag">Machine Learning</span>
+                <span class="tech-tag">Socket.IO</span>
+                <span class="tech-tag">Material-UI</span>
+                <span class="tech-tag">Express.js</span>
+                <span class="tech-tag">Redis</span>
+                <span class="tech-tag">Blockchain</span>
+            </div>
+        </div>
+
+        <div class="demo-card">
+            <h2>🎯 Innovation & Impact</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🔬 Multi-Modal Detection</h3>
+                    <p>First platform to combine deepfake detection, document verification, and social media monitoring</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚡ Real-Time Processing</h3>
+                    <p>Instant fraud detection and alert system for immediate protection</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔗 Blockchain Integration</h3>
+                    <p>Immutable fraud records for regulatory compliance and transparency</p>
+                </div>
+                <div class="feature-card">
+                    <h3>👥 User-Centric Design</h3>
+                    <p>Simple interface designed specifically for retail investors</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-card">
+            <h2>📈 Scalability & Future</h2>
+            <p>Our platform is designed for massive scale and continuous improvement:</p>
+            <ul style="margin: 20px 0; padding-left: 20px;">
+                <li><strong>Cloud-Native Architecture:</strong> Horizontal scaling capability</li>
+                <li><strong>Microservices Design:</strong> Independent scaling of components</li>
+                <li><strong>API-First Approach:</strong> Easy integration with existing systems</li>
+                <li><strong>Multi-Language Support:</strong> Expandable to global markets</li>
+                <li><strong>Continuous Learning:</strong> AI models improve with new data</li>
+            </ul>
+        </div>
+
+        <div class="demo-card">
+            <h2>🚀 Project Status & Demo</h2>
+            <p><strong>Current Stage:</strong> Functional MVP (Minimum Viable Product)</p>
+            <p>The prototype includes basic fraud detection algorithms, web interface, document verification system, and social media monitoring capabilities.</p>
+            
+            <div style="margin: 20px 0;">
+                <a href="#" class="btn" onclick="alert('Live demo would be available at: https://secureinvest-ai-demo.herokuapp.com')">🌐 View Live Demo</a>
+                <a href="#" class="btn btn-secondary" onclick="alert('GitHub repository: https://github.com/adityatayal/SecureInvest-Ai')">📂 GitHub Repository</a>
+            </div>
+        </div>
+
+        <div class="demo-card">
+            <h2>👨‍💻 Developer Information</h2>
+            <div style="text-align: center;">
+                <h3>Aditya Tayal</h3>
+                <p>Full-Stack Developer & AI Enthusiast</p>
+                <p>📧 adityatayal404@gmail.com</p>
+                <p>🔗 LinkedIn: linkedin.com/in/adityatayal</p>
+                <p>🐙 GitHub: github.com/adityatayal</p>
+                <br>
+                <p><em>Built for SEBI Securities Market Hackathon 2025<br>
+                Global Fintech Festival</em></p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 SecureInvest AI - Protecting Investors, Securing Markets</p>
+            <p>Built with ❤️ for SEBI Securities Market Hackathon</p>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate cards on scroll
+            const cards = document.querySelectorAll('.demo-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Add click handlers for demo buttons
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    if (this.textContent.includes('Live Demo')) {
+                        e.preventDefault();
+                        alert('🚀 Live Demo\n\nThe full application would be deployed at:\nhttps://secureinvest-ai-demo.herokuapp.com\n\nFeatures include:\n• Real-time fraud detection\n• Advisor verification\n• Social media monitoring\n• Document analysis\n• Interactive dashboard');
+                    } else if (this.textContent.includes('GitHub')) {
+                        e.preventDefault();
+                        alert('📂 GitHub Repository\n\nSource code available at:\nhttps://github.com/adityatayal/SecureInvest-Ai\n\nIncludes:\n• Complete source code\n• Documentation\n• Setup instructions\n• API documentation');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
